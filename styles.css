@@ -7,14 +7,14 @@ html, body {
     display: flex;
     padding: 10vh 20%;
 }
-.comming-soon {
+.coming-soon {
     text-transform: uppercase;
 }
-.comming-soon h4 {
+.coming-soon h4 {
     font-size: 25px;
     margin-block-end: .5em;
 }
-.comming-soon h1 {
+.coming-soon h1 {
     font-size: 50px;
     margin-block-start: 0;
 }

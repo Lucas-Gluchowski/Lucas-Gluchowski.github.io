@@ -1,79 +1,128 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Coder Station Ltd. Website</title>
+    <link
+      rel="coder sttion icon"
+      type="image/x-icon"
+      href="assets/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Coder Station Ltd. Website</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
-<body>
-
-  <div class="content">
-    <section class="coming-soon">
-      <h4>our website is</h4>
-      <h1>coming soon</h1>
-
-      <div class="counter__containr">
-        <div class="counter">
-          <div class="number" id="days"></div>
-          <div class="number-description">days</div>
-        </div>
-        <div class="counter">
-          <div class="number" id="hours"></div>
-          <div class="number-description">hours</div>
-        </div>
-        <div class="counter">
-          <div class="number" id="minutes"></div>
-          <div class="number-description">min</div>
-        </div>
-        <div class="counter">
-          <div class="number" id="seconds"></div>
-          <div class="number-description">sec</div>
-        </div>
+  <body>
+    <header class="page-header" id="pageHeader">
+      <div class="logo-image" id="logo">
+        <img src="assets/logo.svg" alt="coder station logo" />
       </div>
+      <nav class="navigation">
+        <ul>
+          <li class="navigation--selected" id="aboutLink">about us</li>
+          <li id="servicesLink">services</li>
+          <li id="contactLink">contact</li>
+        </ul>
+      </nav>
+    </header>
 
+    <section class="content section" id="about">
+      We provide <span class="text-effect">coding services</span> from small to
+      large scale projects. Our experienced software engineering team
+      successfully delivered projects ranging from
+      <span class="text-effect">big media house</span> bespoke software to
+      <span class="text-effect">open source scientific platform</span>.
     </section>
-    <div class="image">
-      <img src="assets/logo.png" alt="coder station logo" />
-    </div>
 
-  </div>
+    <section class="content section" id="services">
+      Services:
+      <ul>
+        <li>Software development</li>
+        <li>System design</li>
+        <li>Cloud engineering (AWS)</li>
+        <li>Good practice consulting</li>
+        <li>Database optimization</li>
+      </ul>
+    </section>
 
+    <section id="contact" class="section">
+      <span class="content">Send us a message</span>
 
-  <footer class="footer">Coder Station 2019</footer>
-</body>
-<script>
+      <form method="POST" action="https://formspree.io/xnqjopnk">
+        <div class="form">
+          <div class="form-column">
+            <span class="input input--nao">
+              <input
+                class="input__field input__field--nao"
+                type="text"
+                name="name"
+                required
+              />
+              <label class="input__label input__label--nao" for="name">
+                <span class="input__label-content input__label-content--nao"
+                  >name</span
+                >
+              </label>
+            </span>
 
-  var countDownDate = new Date("Jan 1, 2020 00:00:00").getTime();
+            <span class="input input--nao">
+              <input
+                class="input__field input__field--nao"
+                type="text"
+                name="contact"
+                required
+              />
+              <label class="input__label input__label--nao" for="contact">
+                <span class="input__label-content input__label-content--nao"
+                  >mobile / emial</span
+                >
+              </label>
+            </span>
 
-  var x = setInterval(function () {
+            <span class="input input--nao">
+              <input
+                class="input__field input__field--nao"
+                type="text"
+                name="subject"
+                required
+              />
+              <label class="input__label input__label--nao" for="subject">
+                <span class="input__label-content input__label-content--nao"
+                  >subject</span
+                >
+              </label>
+            </span>
+          </div>
+          <div class="form-column">
+            <span class="input input--nao">
+              <textarea
+                class="input__field input__field--nao textarea__field"
+                type="text"
+                name="message"
+                required
+              ></textarea>
+              <label class="input__label input__label--nao" for="message">
+                <span class="input__label-content input__label-content--nao"
+                  >message</span
+                >
+              </label>
+            </span>
+          </div>
+        </div>
+        <div class="send-button-container">
+          <button type="submit" class="submit-button">send</button>
+        </div>
+      </form>
+    </section>
 
-    // Get today's date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Display the result in the element with id="demo"
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-    }
-  }, 1000);
-
-</script>
-
+    <footer class="footer">Coder Station 2019</footer>
+  </body>
+  <script src="./script.js"></script>
 </html>

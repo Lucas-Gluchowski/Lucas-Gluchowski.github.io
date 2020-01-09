@@ -25,11 +25,13 @@ class Page {
     }
 
     initMenuItem(item, action) {
-        item.onclick = event => {
+        const acition = event => {
             this.removeSelectedClass();
             item.classList.add('navigation--selected');
             action();
-        }
+        };
+        item.onclick = acition;
+        item.ontouchstart = acition;
     }
 
     initOnScroll() {
